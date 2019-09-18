@@ -1,6 +1,6 @@
 # netlifycms-nuxt-template
 
-> Example Nuxt, NetlifyCMS and TailwindCSS project&#34;
+> Example Nuxt and NetlifyCMS project&#34;
 
 ## Build Setup
 
