@@ -33,9 +33,7 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/eslint-module'
   ],
   /*
    ** Nuxt.js modules
@@ -49,16 +47,16 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  generate: {
+    routes() {
+      const fs = require('fs')
+      return fs.readdirSync('./content/projects').map((file) => {
+        return {
+          route: `/projects/${file.slice(0, -5)}`, // Remove the .json from the end of the filename
+          payload: require(`./content/projects/${file}`)
+        }
+      })
+    }
   }
-  // generate: {
-  //   routes() {
-  //     const fs = require('fs')
-  //     return fs.readdirSync('./content/projects').map((file) => {
-  //       return {
-  //         route: `/projects/${file.slice(0, -5)}`, // Remove the .json from the end of the filename
-  //         payload: require(`./content/projects/${file}`)
-  //       }
-  //     })
-  //   }
-  // }
 }

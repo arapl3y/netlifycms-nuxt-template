@@ -1,7 +1,7 @@
 {
   "name": "netlifycms-nuxt-template",
   "version": "1.0.0",
-  "description": "Example Nuxt, NetlifyCMS and TailwindCSS project&#34;",
+  "description": "Example Nuxt and NetlifyCMS project&#34;",
   "author": "Alex Rapley",
   "license": "MIT",
   "private": true,
@@ -18,7 +18,6 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/tailwindcss": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^4.1.0",
