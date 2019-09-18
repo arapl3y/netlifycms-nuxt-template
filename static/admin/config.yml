@@ -36,7 +36,6 @@ collections:
           name: 'featureddescription',
           widget: 'markdown',
         }
-        # ADD DYNAMIC PAGE LAYOUT HERE
       - label: 'Description'
         name: 'description'
         widget: 'list'
