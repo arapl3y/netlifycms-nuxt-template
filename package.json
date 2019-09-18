@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Example Nuxt, NetlifyCMS and TailwindCSS project&#34;",
   "author": "Alex Rapley",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "nuxt",
