@@ -49,5 +49,16 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  generate: {
+    routes() {
+      const fs = require('fs')
+      return fs.readdirSync('./content/projects').map((file) => {
+        return {
+          route: `/projects/${file.slice(0, -5)}`, // Remove the .json from the end of the filename
+          payload: require(`./content/projects/${file}`)
+        }
+      })
+    }
   }
 }
