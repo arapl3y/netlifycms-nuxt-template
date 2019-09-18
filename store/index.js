@@ -4,13 +4,13 @@ Vue.use(Vuex)
 
 export const state = () => ({
   projects: [],
-  about: []
+  pages: []
 })
 
 export const actions = {
   async nuxtServerInit({ dispatch }) {
     await dispatch('getProjects')
-    await dispatch('getAbout')
+    await dispatch('getPages')
   },
   async getProjects({ state, commit }) {
     const files = await require.context('~/content/projects/', false, /\.json$/)
@@ -22,15 +22,15 @@ export const actions = {
 
     commit('SET_PROJECTS', projects)
   },
-  async getAbout({ state, commit }) {
-    const files = await require.context('~/content/about/', false, /\.json$/)
+  async getPages({ state, commit }) {
+    const files = await require.context('~/content/pages/', false, /\.json$/)
 
-    const about = files.keys().map((key) => ({
+    const pages = await files.keys().map((key) => ({
       ...files(key),
-      _path: `/projects/${key.replace('.json', '').replace('./', '')}`
+      _path: `/page/${key.replace('.json', '').replace('./', '')}`
     }))
 
-    commit('SET_ABOUT', about.reverse())
+    commit('SET_PAGES', pages)
   }
 }
 
@@ -38,12 +38,15 @@ export const mutations = {
   SET_PROJECTS(state, posts) {
     state.projects = posts
   },
-  SET_ABOUT(state, data) {
-    state.about = data
+  SET_PAGES(state, pages) {
+    state.pages = pages
   }
 }
 
 export const getters = {
+  getPages(state) {
+    return state.pages
+  },
   getProjects(state) {
     return state.projects
   },
