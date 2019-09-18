@@ -1,0 +1,118 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.v-center {
+    align-items: center;
+  }
+
+  &.v-start {
+    align-items: flex-start;
+  }
+
+  &.v-end {
+    align-items: flex-end;
+  }
+
+  .flex {
+    flex: 1;
+  }
+}
+
+.column {
+  display: flex;
+  flex-flow: column wrap;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.v-center {
+    align-items: center;
+  }
+
+  &.v-start {
+    align-items: flex-start;
+  }
+
+  &.v-end {
+    align-items: flex-end;
+  }
+
+  .flex {
+    flex: 1;
+  }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+
+.h-padded {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+
+  @media (min-width: $small) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: $mid) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: $big) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.v-padded {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  box-sizing: border-box;
+
+  @media (min-width: $small) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: $mid) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: $big) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.cell {
+  @extend .h-padded;
+}
+
+.row {
+  @extend .h-padded;
+}
