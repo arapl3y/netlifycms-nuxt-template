@@ -43,24 +43,26 @@ collections:
           - { label: Description Text, name: descriptionText, widget: 'markdown' }
           - { label: Description Image, name: descriptionImage, widget: 'image', required: false }
 
-  - name: 'pages'
-    label: 'Pages'
-    files:
-      - file: 'content/pages/about'
-        label: 'About Page'
-        name: 'about'
+  - name: 'about'
+    label: 'About'
+    folder: 'content/about'
+    create: true
+    slug: '{{slug}}'
+    format: 'json'
+    identifier_field: name
+    fields:
+      - { label: Name, name: 'name', widget: 'string', required: false}
+      - {
+          label: 'Image',
+          name: 'image',
+          widget: 'image',
+        }
+      - label: 'Description'
+        name: 'description'
+        widget: 'list'
         fields:
-          - {
-              label: 'Image',
-              name: 'image',
-              widget: 'image',
-            }
-          - label: 'Description'
-            name: 'description'
-            widget: 'list'
-            fields:
-              - { label: Description Text, name: descriptionText, widget: 'markdown' }
-              - { label: Description Image, name: descriptionImage, widget: 'image', required: false }
+          - { label: Description Text, name: descriptionText, widget: 'markdown' }
+          - { label: Description Image, name: descriptionImage, widget: 'image', required: false }
 
 
 
